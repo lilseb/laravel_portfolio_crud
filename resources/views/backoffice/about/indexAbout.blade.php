@@ -11,19 +11,27 @@
                         <th scope="">#</th>
                         <th scope="">Nom</th>
                         <th scope="">Prenom</th>
+                        <th scope="">textAbout</th>
                         <th scope="">Birthday</th>
+                        <th scope="">site</th>
                         <th scope="">phone</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($about as $item)
+
+
+
+
                         <tr>
 
                             
                             <th scope="">{{$item->id}}</th>
                             <td>{{$item->nom}}</td>
                             <td>{{$item->prenom}}</td>
+                            <td>{{$item->textAbout}}</td>
                             <td>{{$item->birthday}}</td>
+                            <td>{{$item->website}}</td>
                             <td>{{$item->phone}}</td>
                             <td>
                                 <a href={{route('about.edit', $item->id)}} class="btn btn-success mb-1">edit</a>
@@ -48,7 +56,7 @@
                 <tbody>
                     @foreach ($about as $item)
                         <tr>
-                            <td>{{$item->titre}}</td>
+                            <td>{{$item->job}}</td>
                             <td>{{$item->description}}</td>
                         </tr>                                                
                     @endforeach

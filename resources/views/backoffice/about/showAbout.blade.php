@@ -17,16 +17,17 @@
                 <p><span class="font-weight-light">N° de phone : </span>{{$about->phone}}</p>
                 <p><span class="font-weight-light">Ville : </span>{{$about->city}}</p>
                 <p><span class="font-weight-light">Age : </span>{{$about->age}}</p>
+                
                 <p><span class="font-weight-light">Degree : </span>{{$about->degree}}</p>
                 <p><span class="font-weight-light">Email : </span>{{$about->email}}</p>
-                <p><span class="font-weight-light">Statut : </span>{{$about->freelance}}</p>
+                <p><span class="font-weight-light">Freelance : </span>{{$about->freelance}}</p>
             </div>
             <div class="card-footer d-flex">
-                <a href={{route('about.edit', $about->id)}} class="btn btn-primary mx-1">editer</a>
+                <a href={{route('about.edit', $about->id)}} class="btn btn-primary mx-1">edit</a>
                 <form action={{route('about.destroy', $about->id)}} method="post">
                     @csrf
                     @method('DELETE')
-                    <button class="btn btn-danger mb-1">supprimer</button>
+                    <button class="btn btn-danger mb-1">delete</button>
                 </form>
 
             </div>

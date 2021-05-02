@@ -16,12 +16,34 @@ class FactSeeder extends Seeder
     {
         DB::table('facts')->insert([
             [
-                "happy" => 232,
-                "project" => 521,
-                "support" => 1463,
-                "work" => 15,
-                "created_at" =>now(),
+                'icon'=> 'icofont-simple-smile',
+                'count'=> 232,
+                'description' => "Happy Clients",
+                "created_at"=>now()
+
             ],
+            [
+                'icon'=> "icofont-document-folder",
+                'count'=> 521,
+                'description' => "project",
+                "created_at"=>now()
+
+            ],
+            [
+                'icon'=> "icofont-live-support",
+                'count'=> 1464,
+                'description' => "Hours of Suppport",
+                "created_at"=>now()
+
+            ],
+            [
+                'icon'=> "icofont-users-alt-5",
+                'count'=> 15,
+                'description' => "Hard workers",
+                "created_at"=>now()
+
+            ],
+
         ]);
     }
 }

@@ -16,10 +16,11 @@ class AboutController extends Controller
     }
 
     public function store(Request $request){
+        //champs obligatoire
         request()->validate([
             "nom"=>["required"],
             "prenom"=>["required"],
-            "titre"=>["required"],
+            "job"=>["required"],
             "description"=>["required"],
             "birthday"=>["required", "date"],
             "website"=>["required"],
@@ -30,11 +31,12 @@ class AboutController extends Controller
             "email"=>["required", "email"],
             "freelance"=>["required"],
         ]);
-        
+
+        //mettre dans la db
         $about = new About();
         $about->nom = $request->nom;
         $about->prenom = $request->prenom;
-        $about->titre = $request->titre;
+        $about->job = $request->job;
         $about->description = $request->description;
         $about->birthday = $request->birthday;
         $about->website = $request->website;
@@ -46,45 +48,41 @@ class AboutController extends Controller
         $about->freelance = $request->freelance;
         $about->save();
         return redirect()->route('about.index');
-
-        
-        
-        
     }
-    
+
+    //delete
     public function destroy(About $id){
         $id->delete();
         return redirect()->route('about.index');
     }
 
-
-    
+    //edit
     public function edit(About $id){
         $about = $id;
         return view ('backoffice.about.editAbout', compact('about'));
     }
 
-
-
     public function update(About $id, Request $request){
-        request()->validate([
-            "nom"=>["required"],
-            "prenom"=>["required"],
-            "titre"=>["required"],
-            "description"=>["required"],
-            "birthday"=>["required", "date"],
-            "website"=>["required"],
-            "phone"=>["required", "numeric"],
-            "city"=>["required"],
-            "age"=>["required", "integer"],
-            "degree"=>["required"],
-            "email"=>["required", "email"],
-            "freelance"=>["required"],
-        ]);
+        //champs obligatoire
+        // // request()->validate([
+        //     "nom"=>["required"],
+        //     "prenom"=>["required"],
+        //     "job"=>["required"],
+        //     "description"=>["required"],
+        //     "birthday"=>["required", "date"],
+        //     "website"=>["required"],
+        //     "phone"=>["required", "numeric"],
+        //     "city"=>["required"],
+        //     "age"=>["required", "integer"],
+        //     "degree"=>["required"],
+        //     "email"=>["required", "email"],
+        //     "freelance"=>["required"],
+        // ]);
+        
         $about = $id;
         $about->nom = $request->nom;
         $about->prenom = $request->prenom;
-        $about->titre = $request->titre;
+        $about->job = $request->job;
         $about->description = $request->description;
         $about->birthday = $request->birthday;
         $about->website = $request->website;
@@ -96,14 +94,11 @@ class AboutController extends Controller
         $about->freelance = $request->freelance;
         $about->save();
         return redirect()->route('about.index');
-        
     }
+
     //show
     public function show(About $id){
         $about = $id;
         return view('backoffice.about.showAbout',compact('about'));
     }
-
 }
-
-

@@ -2,21 +2,49 @@
 
 @section('content')
         @include('partial.backpart.navAdmin')
-        <h1 class="text-center">Admin</h1>
+        <h1 class="text-center">Dashboard</h1>
         <div class="container">
-                <div class="mb-2">
-                        <div class="">
+                <div class="row mb-2">
+                        <div class="col-6">
                                 <div class="card">
-
                                         <div class="card-header">
                                                 <h4>About</h4>
-
                                         </div>
-
                                         <div class="card-body">
-                                        <a class="btn btn-primary mx-auto" href={{ route('about.index') }}>Voir</a>
+                                        <a class="btn btn-primary mx-auto" href={{ route('about.index') }}>Tableau</a>
                                         </div>
-
+                                </div>
+                        </div>
+                        <div class="col-6">
+                                <div class="card">
+                                        <div class="card-header">
+                                                <h4>Facts</h4>
+                                        </div>
+                                        <div class="card-body">
+                                                <a class="btn btn-primary mx-auto" href={{ route('fact.index') }}>Tableau</a>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <div class="row mb-2">
+                        <div class="col-6">
+                                <div class="card">
+                                        <div class="card-header">
+                                                <h4>Portfolio</h4>
+                                        </div>
+                                        <div class="card-body">
+                                        <a class="btn btn-primary mx-auto" href={{ route('portfolio.index') }}>Tableau</a>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="col-6">
+                                <div class="card">
+                                        <div class="card-header">
+                                                <h4>Service</h4>
+                                        </div>
+                                        <div class="card-body">
+                                                <a class="btn btn-primary mx-auto" href={{ route('service.index') }}>Tableau</a>
+                                        </div>
                                 </div>
                         </div>
                 </div>
