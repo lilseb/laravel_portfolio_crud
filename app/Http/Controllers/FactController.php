@@ -9,7 +9,7 @@ class FactController extends Controller
 {
     public function index(){
         $Facts = Fact::all();
-        return view('backoffice.fact.indexFact',compact('facts'));
+        return view('backoffice.fact.indexFact',compact('Facts'));
     }
 
     public function create(){

@@ -2,7 +2,7 @@
 
 @include('layouts.flash')
 @section('content')
-    @include('partial.bo.navAdmin')
+    @include('partial.backpart.navAdmin')
     <div class="container">
         <h3 class="text-center">Modifier {{$service->nom}}</h3>
         <form action={{route('service.update', $service->id)}} method="post" class="w-75 mx-auto">

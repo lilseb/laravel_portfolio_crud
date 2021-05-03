@@ -3,9 +3,10 @@
 @include('layouts.flash')
 @section('content')
     @include('partial.backpart.navAdmin')
-    <div class="container">
-        <h3 class="text-center">Ajouter un nv fait</h3>
-        <a href={{route('admin.index')}} class="text-center">Back admin</a>
+    <div >
+        <h3 class="text-center">ADD FACT</h3>
+        
+        <a href={{route('admin.index')}} class="text-center">Back to admin</a>
         <form action={{ route('fact.store') }} method="post" class="w-75 mx-auto">
             @csrf
             <div class="form-group">
@@ -15,6 +16,8 @@
                     <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>
                 @enderror
             </div>
+
+
             <div class="form-group">
                 <label for="description">Description : </label>
                 <input type="text" class="form-control  @error('description') is-invalid @enderror" id="description" name="description">
@@ -22,6 +25,8 @@
                     <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>
                 @enderror
             </div>
+
+
             <div class="form-group">
                 <label for="icon">Lien de l'icone</label>
                 <input type="text" class="form-control  @error('icon') is-invalid @enderror" id="icon" name="icon">
@@ -29,6 +34,7 @@
                     <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>
                 @enderror
             </div>
+
             <button type="submit" class="btn btn-primary">Valider</button>
         </form>
     </div>

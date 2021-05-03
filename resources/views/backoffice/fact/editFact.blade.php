@@ -3,8 +3,9 @@
 @include('layouts.flash')
 @section('content')
     @include('partial.backpart.navAdmin')
-    <div class="container">
+    <div >
         <h3 class="text-center">Modifier {{$fact->nom}}</h3>
+
         <form action={{route('fact.update', $fact->id)}} method="post" class="w-75 mx-auto">
             @csrf
             @method('PUT')
@@ -15,6 +16,8 @@
                     <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>
                 @enderror
             </div>
+
+
             <div class="form-group">
                 <label for="description">Description : </label>
                 <input type="text" class="form-control  @error('description') is-invalid @enderror" value="{{$fact->description}}" id="description" name="description">
@@ -22,6 +25,7 @@
                     <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>
                 @enderror
             </div>
+
             <div class="form-group">
                 <label for="icon">Lien de l'icone</label>
                 <input type="text" class="form-control  @error('icon') is-invalid @enderror" value="{{$fact->icon}}" id="icon" name="icon">
@@ -29,6 +33,7 @@
                     <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>
                 @enderror
             </div>
+            
             <button type="submit" class="btn btn-primary">Valider</button>
         </form>
     </div>

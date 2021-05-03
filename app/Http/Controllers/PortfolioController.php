@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class PortfolioController extends Controller
 {
     public function index(){
-        $Portfolios = Portfolio::all();
+        $portfolios = Portfolio::all();
         return view('backoffice.portfolio.indexPortfolio',compact('portfolios'));
     }
 

@@ -23,9 +23,9 @@
                 
             <div class="col-lg-4 col-md-6 portfolio-item {{$portfolio->filter}}">
               <div class="portfolio-wrap">
-                <img src={{$portfolio->image}} class="img-fluid" alt="">
+                <img src={{$portfolio->lien}} class="img-fluid" alt="">
                 <div class="portfolio-links">
-                  <a href="{{$portfolio->image}}" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
+                  <a href="{{$portfolio->lien}}" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
                   <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>

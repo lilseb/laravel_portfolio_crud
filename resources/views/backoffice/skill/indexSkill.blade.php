@@ -1,10 +1,9 @@
 @extends('layouts.index')
 
-@include('layouts.flash')
 @section('content')
     @include('partial.backpart.navAdmin')
-    <section id="service">
-        <h3 class="text-center mb-3">Service</h3>
+    <section id="skill">
+        <h3 class="text-center mb-3">Skills</h3>
         <div class="container">
             <a href={{route('admin.index')}}>Back Dashboard</a>
             <table class="table">
@@ -12,22 +11,21 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Titre</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Lien de l'icone</th>
+                        <th scope="col">Pourcentage</th>
                         <th scope="col">action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($Services as $item)
+                    @foreach ($skills as $item)
                         <tr>
                             <th scope="row">{{$item->id}}</th>
                             <td>{{$item->titre}}</td>
-                            <td>{{$item->description}}</td>
-                            <td>{{$item->icon}}</td>
+                            <td>{{$item->value}}</td>
                             <td>
-                                <a href={{route('service.edit', $item->id)}} class="btn btn-primary mb-1">edit</a>
-                                <a href={{route('service.show', $item->id)}} class="btn btn-success mb-1">show</a>
-                                <form action={{route('service.destroy', $item->id)}} method="post">
+
+                                <a href={{route('skill.edit', $item->id)}} class="btn btn-primary mb-1">edit</a>
+                                <a href={{route('skill.show', $item->id)}} class="btn btn-success mb-1">show</a>
+                                <form action={{route('skill.destroy', $item->id)}} method="post">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger mb-1">del</button>
@@ -37,7 +35,7 @@
                     @endforeach
                 </tbody>
             </table>
-            <a href={{route('service.create')}} class="btn btn-primary">ADD</a>
+            <a href={{route('skill.create')}} class="btn btn-primary">ADD SKILL</a>
         </div>
     </section>
 @endsection

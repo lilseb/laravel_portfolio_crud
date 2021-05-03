@@ -8,15 +8,15 @@
           </div>
   
           <div class="row no-gutters">
-  
             @foreach ($Facts as $fact)
+  
             <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
               <div class="count-box">
                 <i class="icofont-simple-smile"></i>
                 <span data-toggle="counter-up">{{$fact->happy}}</span>
                 <p><strong>Happy Clients</strong> consequuntur quae</p>
               </div>
-            </div>
+            </div>   
 
             <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
               <div class="count-box">

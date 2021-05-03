@@ -4,8 +4,8 @@
 @section('content')
     @include('partial.backpart.navAdmin')
     <div class="container">
-        <h3 class="text-center">Ajouter un nv projet</h3>
-        <a href={{route('admin.index')}} class="text-center">Back admin</a>
+        <h3 class="text-center">ADD</h3>
+        <a href={{route('admin.index')}} class="text-center">Back to admin</a>
         <form action={{ route('portfolio.store') }} method="post" class="w-75 mx-auto">
             @csrf
 

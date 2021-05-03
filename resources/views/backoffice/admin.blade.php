@@ -48,6 +48,16 @@
                                 </div>
                         </div>
                 </div>
-
+                <div class="row mb-2">
+                        <div class="col-12">
+                                <div class="card">
+                                        <div class="card-header">
+                                                <h4>Skills</h4>
+                                        </div>
+                                        <div class="card-body">
+                                        <a class="btn btn-primary mx-auto" href={{ route('skill.index') }}>Tableau</a>
+                                        </div>
+                                </div>
+                        </div>
         </div>
 @endsection

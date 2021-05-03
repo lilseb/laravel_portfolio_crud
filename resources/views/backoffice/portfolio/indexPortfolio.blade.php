@@ -7,6 +7,8 @@
         <div class="container">
             <a href={{route('admin.index')}}>Back Dashboard</a>
             <table class="table">
+
+
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -20,7 +22,7 @@
                 <tbody>
                     @foreach ($portfolios as $item)
                         <tr>
-                            <th scope="row">{{$item->id}}</th>
+                            <th>{{$item->id}}</th>
                             <td>{{$item->titre}}</td>
                             <td>{{$item->filter}}</td>
                             <td>{{$item->lien}}</td>
@@ -30,9 +32,9 @@
                                 <a href={{route('portfolio.show', $item->id)}} class="btn btn-success mb-1">show</a>
                                 <form action={{route('portfolio.destroy', $item->id)}} method="post">
                                     @csrf
-                                    
+
                                     @method('DELETE')
-                                    <button class="btn btn-danger mb-1">del</button>
+                                    <button class="btn btn-danger mb-1">delete</button>
                                 </form>
                             </td>
 
@@ -40,7 +42,7 @@
                     @endforeach
                 </tbody>
             </table>
-            <a href={{route('portfolio.create')}} class="btn btn-primary">Ajouter un nv projet</a>
+            <a href={{route('portfolio.create')}} class="btn btn-primary">ADD</a>
         </div>
     </section>
 @endsection

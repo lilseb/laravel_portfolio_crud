@@ -9,7 +9,7 @@ class ServiceController extends Controller
 {
     public function index(){
         $Services = Service::all();
-        return view('backoffice.service.indexService',compact('services'));
+        return view('backoffice.service.indexService',compact('Services'));
     }
 
     public function create()

@@ -4,8 +4,8 @@
     @include('partial.backpart.navAdmin')
     <section id="fact">
         <h3 class="text-center mb-3">Facts</h3>
-        <div class="container">
-            <a href={{route('admin.index')}}>Back Dashboard</a>
+        <div >
+            <a href={{route('admin.index')}}>Go back</a>
             <table class="table">
                 <thead>
                     <tr>
@@ -17,8 +17,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($facts as $item)
-                        <tr>
+                    
+                    @foreach ($Facts as $item)
+                    <tr>
                             <th scope="row">{{$item->id}}</th>
                             <td>{{$item->count}}</td>
                             <td>{{$item->description}}</td>
@@ -29,14 +30,14 @@
                                 <form action={{route('fact.destroy', $item->id)}} method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-danger mb-1">del</button>
+                                    <button class="btn btn-danger mb-1">delete</button>
                                 </form>
                             </td>
                         </tr>                                                
                     @endforeach
                 </tbody>
             </table>
-            <a href={{route('fact.create')}} class="btn btn-primary">Ajouter un nv fait</a>
+            <a href={{route('fact.create')}} class="btn btn-primary">ADD</a>
         </div>
     </section>
 @endsection
